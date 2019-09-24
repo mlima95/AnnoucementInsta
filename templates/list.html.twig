@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}{{ parent() }}{% endblock %}
+{% block title %}{{ parent()}} HomeController!{% endblock %}
+
+{% block header %} {{ parent() }} {% endblock %}
+{% block body %}
+
+    {% for ValeurList in ListAnnoucements %}
+        <li>Title : {{ ValeurList.title }}</li><br>
+        <li>Content : {{ ValeurList.content }}</li><br>
+        <li>price : {{ ValeurList.price }}</li><br>
+        <li>createdDate : {{ ValeurList.createdDate |date("d/m/Y") }}</li><br><br>
+    {% endfor %}
+
+{% endblock %}

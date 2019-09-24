@@ -1,4 +1,7 @@
 {
+    "authors": [
+        {"name":"LIMA Milan"}
+    ],
     "type": "project",
     "license": "proprietary",
     "require": {

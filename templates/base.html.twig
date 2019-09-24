@@ -2,9 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('Css/style.css') }}" type="text/css" />{% endblock %}
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+
     </head>
+    {% block header %}
+    <header class="nav">
+
+        <ul>
+            <li><a href={{ path("home") }}>Home</a></li>
+            <li><a href={{ path("annoucements") }}>List</a></li>
+            <li><a href={{ path("add") }}>Creation</a></li>
+        </ul>
+
+    </header>
+    {% endblock %}
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}

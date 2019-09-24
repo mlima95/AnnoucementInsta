@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}{{ parent() }}{% endblock %}
+{% block title %}{{ parent()}} HomeController!{% endblock %}
+
+{% block header %} {{ parent() }} {% endblock %}
+{% block body %}
+
+    {% if id == 0 %}
+
+        <li>Id : 0</li><br>
+        <li>Title : Espagne</li><br>
+        <li>Content : Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><br>
+        <li>price : 57</li><br>
+        <li>createdDate : 24/09/2019</li><br><br>
+
+    {% endif %}
+
+
+    {% if id == 1 %}
+
+        <li>Id : 1</li><br>
+        <li>Title : Espagne</li><br>
+        <li>Content : Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><br>
+        <li>price : 56</li><br>
+        <li>createdDate : 24/09/2019</li><br><br>
+
+    {% endif %}
+    <a href="{{ path('home')}}">Go back</a>
+{% endblock %}
