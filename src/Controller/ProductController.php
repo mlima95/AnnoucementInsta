@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Tests\Fixtures\ToString;
 
 class ProductController extends AbstractController
 {
@@ -61,17 +62,21 @@ class ProductController extends AbstractController
         return new Response('Delete product with id ' .$product->getId());
     }
 
-    public function getById($id)
+    /**
+     * @Route("/products/getbyid", name="getbyid")
+     */
+    public function getByName() : Response
     {
         $repository = $this->getDoctrine()->getRepository(Product::class);
 
-// look for a single Product by its primary key (usually "id")
-        $product = $repository->find($id);
+
 
 // look for a single Product by name
         $product = $repository->findOneBy([
             'name' => 'T-shirt'
         ]);
+        return new Response("The id product is".$product->getName());
+
     }
 
     public function detail(Product $product){
@@ -98,13 +103,17 @@ class ProductController extends AbstractController
     /**
      * @Route("/products")
      */
-    public function list(): Response
+    public function list()
     {
         $products = $this->getDoctrine()
             ->getRepository(Product::class)
             ->findProductsGreaterThan(200);
 
+
         // ...
-        return new Response("Products are".$products);
+        return $this->render('product.html.twig', [
+            'controller_name' => 'ProductsController',
+            'ListProducts' => $products,
+        ]);
     }
 }
