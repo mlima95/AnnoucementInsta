@@ -26,7 +26,9 @@ class TaskController extends AbstractController
             // $entityManager = $this->getDoctrine()->getManager();
             // $entityManager->persist($task);
             // $entityManager->flush();
-            return $this->redirectToRoute('home');
+          //  dump($task);die;
+            return $this->redirectToRoute('task');
+
         }
 
         return $this->render('contact.html.twig', [
