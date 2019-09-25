@@ -27,6 +27,7 @@ class TaskAnnoucementsController extends AbstractController
             // $entityManager = $this->getDoctrine()->getManager();
             // $entityManager->persist($task);
             // $entityManager->flush();
+
             return $this->redirectToRoute('home');
         }
 

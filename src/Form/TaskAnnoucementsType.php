@@ -16,7 +16,7 @@ class TaskAnnoucementsType extends AbstractType
     {
         $builder
             ->add('title',TextType::class)
-            ->add('price',TextType::class)
+            ->add('price',MoneyType::class)
             ->add('content', TextareaType::class);
     }
 }

@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('Css/style.css') }}" type="text/css" />{% endblock %}
+        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('Css/style.css') }}" type="text/css" />
+        {% endblock %}
         <title>{% block title %}Welcome!{% endblock %}</title>
 
     </head>
@@ -15,7 +16,7 @@
             <li><a href={{ path("add") }}>Creation</a></li>
             <li><a href={{ path("task") }}>CreationSymfony</a></li>
             <li><a href={{ path("taskannoucements") }}>TpFormSymfony</a></li>
-        </ul>
+        </ul><br>
 
     </header>
     {% endblock %}

@@ -14,7 +14,7 @@ class TaskAnnoucements
     public $title;
     /**
      * @Assert\Type(
-     *     type="integer",
+     *     type="double",
      *     message="The value {{ value }} is not a valid {{ type }}."
      * )
      */
