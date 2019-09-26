@@ -38,4 +38,13 @@ class UserManager
     {
         return $this->annoucementRepository->findAnnoucements();
     }
+
+    public function findid($id){
+        return $this->annoucementRepository->findid($id);
+    }
+
+    public function findLastAnnouncements($limit): array
+    {
+        return $this->annoucementRepository->findLastAnnoucements($limit);
+    }
 }
