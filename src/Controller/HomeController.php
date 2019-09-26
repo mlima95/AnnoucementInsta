@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Annoucement;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,17 +14,10 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        $homeAnnoucement=[];
-
-        for($i =0; $i<=1;$i++){
-            $homeAnnoucement[]=[
-                'id' => $i,
-                'title' => 'Espagne',
-                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                'price' => $i+56,
-                'createdDate' => new \DateTime()
-            ];
-    }
+        $homeAnnoucement = $this->getDoctrine()
+            ->getRepository(Annoucement::class)
+            ->findLastAnnoucements(2);
+        // dump($annoucements);die;
 
         return $this->render('/home.html.twig', [
             'controller_name' => 'HomeController',
