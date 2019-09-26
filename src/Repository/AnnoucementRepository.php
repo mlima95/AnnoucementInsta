@@ -27,6 +27,15 @@ class AnnoucementRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function findid(int $id): array
+    {
+        return $this->createQueryBuilder('annoucement')
+            ->where('annoucement.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getResult();
+    }
+
     public function findLastAnnoucements($limit): array
     {
         return $this->createQueryBuilder('annoucement')

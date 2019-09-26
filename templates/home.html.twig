@@ -7,11 +7,10 @@
 {% block header %} {{ parent() }} {% endblock %}
 {% block body %}
     {% for ValeurList in HomeList %}
-        <li>Id : {{ ValeurList.id }}</li><br>
         <li>Title : {{ ValeurList.title }}</li><br>
         <li>Content : {{ ValeurList.content }}</li><br>
         <li>price : {{ ValeurList.price }}</li><br>
-        <li>createdDate : {{ ValeurList.createdAt |date("d/m/Y") }}</li>
+        <li>Date de publication : {{ ValeurList.createdAt |date("d/m/Y") }}</li>
         <a href={{ path('detail',{id: ValeurList.id}) }}>Show more</a><br><br>
     {% endfor %}
 {% endblock %}

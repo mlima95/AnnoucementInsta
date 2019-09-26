@@ -7,25 +7,12 @@
 {% block header %} {{ parent() }} {% endblock %}
 {% block body %}
 
-    {% if id == 0 %}
-
-        <li>Id : 0</li><br>
-        <li>Title : Espagne</li><br>
-        <li>Content : Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><br>
-        <li>price : 57</li><br>
-        <li>createdDate : 24/09/2019</li><br><br>
-
-    {% endif %}
-
-
-    {% if id == 1 %}
-
-        <li>Id : 1</li><br>
-        <li>Title : Espagne</li><br>
-        <li>Content : Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><br>
-        <li>price : 56</li><br>
-        <li>createdDate : 24/09/2019</li><br><br>
-
-    {% endif %}
+    {% for ValeurList in ListDetail %}
+        <li>Id : {{ ValeurList.id }}</li><br>
+        <li>Title : {{ ValeurList.title }}</li><br>
+        <li>Content : {{ ValeurList.content }}</li><br>
+        <li>price : {{ ValeurList.price }}</li><br>
+        <li>Date de publication : {{ ValeurList.createdAt |date("d/m/Y") }}</li>
+    {% endfor %}
     <a href="{{ path('home')}}">Go back</a>
 {% endblock %}
