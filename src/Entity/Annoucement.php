@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\DTO\TaskAnnoucements;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +36,13 @@ class Annoucement
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+    public function __construct(TaskAnnoucements $taskAnnoucements)
+    {
+        $this->Title=$taskAnnoucements->title;
+        $this->Price=$taskAnnoucements->price;
+        $this->Content=$taskAnnoucements->content;
+        $this->createdAt=new \DateTime();
+    }
 
     public function getId(): ?int
     {

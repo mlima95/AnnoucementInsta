@@ -6,6 +6,7 @@ namespace App\Controller;
 
 
 use App\DTO\TaskAnnoucements;
+use App\Entity\Annoucement;
 use App\Form\TaskAnnoucementsType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,9 +25,10 @@ class TaskAnnoucementsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // $entityManager = $this->getDoctrine()->getManager();
-            // $entityManager->persist($task);
-            // $entityManager->flush();
+             $entityManager = $this->getDoctrine()->getManager();
+            $annoucement= new Annoucement($taskAnnoucement);
+             $entityManager->persist($annoucement);
+             $entityManager->flush();
 
             return $this->redirectToRoute('home');
         }

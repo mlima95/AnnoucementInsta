@@ -11,7 +11,7 @@
         <li>Title : {{ ValeurList.title }}</li><br>
         <li>Content : {{ ValeurList.content }}</li><br>
         <li>price : {{ ValeurList.price }}</li><br>
-        <li>createdDate : {{ ValeurList.createdDate |date("d/m/Y") }}</li><br><br>
+        <li>createdDate : {{ ValeurList.createdAt |date("d/m/Y") }}</li><br><br>
     {% endfor %}
 
 {% endblock %}

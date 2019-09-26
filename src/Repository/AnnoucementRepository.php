@@ -19,6 +19,14 @@ class AnnoucementRepository extends ServiceEntityRepository
         parent::__construct($registry, Annoucement::class);
     }
 
+
+    public function findAnnoucements(): array
+    {
+        return $this->createQueryBuilder('annoucement')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Annoucement[] Returns an array of Annoucement objects
     //  */

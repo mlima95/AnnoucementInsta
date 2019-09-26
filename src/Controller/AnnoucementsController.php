@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Annoucement;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -92,6 +93,27 @@ class AnnoucementsController extends AbstractController
 
 
         return $this->render('/list.html.twig', [
+            'controller_name' => 'AnnoucementsController',
+            'ListAnnoucements' => $annoucements,
+        ]);
+    }
+
+
+    /**
+     * @Route("/annoucements/{page}", name="annoucements",
+     *     requirements={"page"="\d+"},
+     *     defaults={"page"="1"})
+     */
+    public function list()
+    {
+        $annoucements = $this->getDoctrine()
+            ->getRepository(Annoucement::class)
+            ->findAnnoucements();
+       // dump($annoucements);die;
+
+
+        // ...
+        return $this->render('list.html.twig', [
             'controller_name' => 'AnnoucementsController',
             'ListAnnoucements' => $annoucements,
         ]);
