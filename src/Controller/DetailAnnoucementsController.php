@@ -26,8 +26,8 @@ class DetailAnnoucementsController extends AbstractController
     }
 
     /**
-     * @Route("/annoucements/detail/{id}", name="detail",
-     *     requirements={"id"="[0-9]+"})
+     * @Route("/{_locale}/annoucements/detail/{id}", name="detail",
+     *     requirements={"id"="[0-9]+","_locale"="fr|en"})
      */
     public function index(int $id)
     {

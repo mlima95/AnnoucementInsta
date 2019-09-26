@@ -1,0 +1,5 @@
+detail.id: 'Mon id'
+detail.title: 'Titre'
+detail.content: 'Contenu'
+detail.price: 'Prix'
+detail.date: 'Date de publication'

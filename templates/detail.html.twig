@@ -8,11 +8,11 @@
 {% block body %}
 
     {% for ValeurList in ListDetail %}
-        <li>Id : {{ ValeurList.id }}</li><br>
-        <li>Title : {{ ValeurList.title }}</li><br>
-        <li>Content : {{ ValeurList.content }}</li><br>
-        <li>price : {{ ValeurList.price }}</li><br>
-        <li>Date de publication : {{ ValeurList.createdAt |date("d/m/Y") }}</li>
+        <li>{{ 'detail.id'|trans }}: {{ ValeurList.id }}</li><br>
+        <li>{{ 'detail.title'|trans }}: {{ ValeurList.title }}</li><br>
+        <li>{{ 'detail.content'|trans }} : {{ ValeurList.content }}</li><br>
+        <li>{{ 'detail.price'|trans }} : {{ ValeurList.price }}</li><br>
+        <li>{{ 'detail.date'|trans }} : {{ ValeurList.createdAt |date("d/m/Y") }}</li>
     {% endfor %}
     <a href="{{ path('home')}}">Go back</a>
 {% endblock %}
