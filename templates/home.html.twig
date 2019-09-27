@@ -6,6 +6,10 @@
 
 {% block header %} {{ parent() }} {% endblock %}
 {% block body %}
+    {% if is_granted('ROLE_USER') %}
+        <b>{{ app.user.email }}</b>
+        <a href="{{ path('logout') }}">Déconnexion</a><br>
+    {% endif %}<br>
     {% for ValeurList in HomeList %}
         <li>{{ 'annoucements.title'|trans }} : {{ ValeurList.title }}</li><br>
         <li>{{ 'annoucements.content'|trans }} : {{ ValeurList.content }}</li><br>
