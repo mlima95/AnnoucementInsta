@@ -1,0 +1,12 @@
+annoucements.id: 'My id'
+annoucements.title: 'Title'
+annoucements.content: 'Content'
+annoucements.price: 'Price'
+annoucements.date: 'Publication date'
+annoucements.link: 'Show more'
+annoucements.detail.link: 'Go Back'
+
+annoucements.header.home: 'Home'
+annoucements.header.list: 'List'
+annoucements.header.CreateSymfony: 'Create Form Symfony'
+annoucements.header.tpSymfony: 'Tp Symfony'

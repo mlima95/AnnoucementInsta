@@ -1,5 +1,13 @@
-detail.id: 'Mon id'
-detail.title: 'Titre'
-detail.content: 'Contenu'
-detail.price: 'Prix'
-detail.date: 'Date de publication'
+annoucements.id: 'Mon id'
+annoucements.title: 'Titre'
+annoucements.content: 'Contenu'
+annoucements.price: 'Prix'
+annoucements.date: 'Date de publication'
+annoucements.link: 'Plus de details'
+annoucements.detail.link: 'Retour'
+
+annoucements.header.home: 'Accueil'
+annoucements.header.list: 'Liste'
+annoucements.header.CreateSymfony: 'Creation Formulaire Symfony'
+annoucements.header.tpSymfony: 'Tp Symfony'
+

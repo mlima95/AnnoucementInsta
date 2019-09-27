@@ -8,10 +8,10 @@
 {% block body %}
 
     {% for ValeurList in ListAnnoucements %}
-        <li>Title : {{ ValeurList.title }}</li><br>
-        <li>Content : {{ ValeurList.content }}</li><br>
-        <li>price : {{ ValeurList.price }}</li><br>
-        <li>createdDate : {{ ValeurList.createdAt |date("d/m/Y") }}</li><br><br>
+        <li>{{ 'annoucements.title'|trans }} : {{ ValeurList.title }}</li><br>
+        <li>{{ 'annoucements.content'|trans }} : {{ ValeurList.content }}</li><br>
+        <li>{{ 'annoucements.price'|trans }} : {{ ValeurList.price }}</li><br>
+        <li>{{ 'annoucements.date'|trans }} : {{ ValeurList.createdAt |date("d/m/Y") }}</li><br><br>
     {% endfor %}
 
 {% endblock %}

@@ -22,7 +22,8 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/", name="home")
+     * @Route("/{_locale}", name="home",
+     *     requirements={"_locale"="fr|en"})
      */
     public function index()
     {
