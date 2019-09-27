@@ -18,6 +18,47 @@ class User implements UserInterface
     private $id;
 
     /**
+     * @ORM\Column
+     */
+    private $firstname;
+
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param mixed $firstname
+     */
+    public function setFirstname($firstname): void
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param mixed $lastname
+     */
+    public function setLastname($lastname): void
+    {
+        $this->lastname = $lastname;
+    }
+    /**
+     * @ORM\Column
+     */
+    private $lastname;
+
+    /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
     private $email;
@@ -111,3 +152,4 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 }
+
