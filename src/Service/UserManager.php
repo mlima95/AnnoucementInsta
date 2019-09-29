@@ -34,10 +34,6 @@ class UserManager
         $this->objectManager->flush();
     }
 
-    public function findAnnouncements(): array
-    {
-        return $this->annoucementRepository->findAnnoucements();
-    }
 
     public function findid($id){
         return $this->annoucementRepository->findid($id);

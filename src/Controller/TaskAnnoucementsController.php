@@ -28,8 +28,9 @@ class TaskAnnoucementsController extends AbstractController
     }
 
     /**
-     * @Route("/{_locale}/annoucements/taskannoucements", name="taskannoucements",
-     * requirements={"_locale"="fr|en"})
+     * @Route("/{_locale}/annoucements/add", name="add",
+     * requirements={"_locale"="fr|en"}),
+     * methods={"GET","POST"})
      */
 
     public function index(Request $request){

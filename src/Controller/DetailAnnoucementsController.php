@@ -32,21 +32,7 @@ class DetailAnnoucementsController extends AbstractController
     public function index(int $id)
     {
 
-//        $detailAnnoucement=[];
-//
-//
-//        for($id; $id<$id;$id++) {
-//            $detailAnnoucement[] = [
-//                'id' => $id,
-//                'title' => 'Espagne',
-//                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-//                'price' => $id + 56,
-//                'createdDate' => new \DateTime()
-//            ];
-//        }
-
         $detailAnnoucement = $this->userManager->findid($id);
-
 
         return $this->render('/detail.html.twig', [
             'controller_name' => 'DetailAnnoucementsController',

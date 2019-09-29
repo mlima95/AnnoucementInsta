@@ -25,7 +25,7 @@ class AnnoucementsController extends AbstractController
      */
     public function list()
     {
-        $annoucements = $this->userManager->findAnnouncements();
+        $annoucements = $this->userManager->findLastAnnouncements(10);
 
 
 
